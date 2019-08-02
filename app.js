@@ -10,7 +10,7 @@ app.use(history({
 }));
 app.use(staticFileMiddleware);
 
-const port = 8080;
+const port = 80;
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
