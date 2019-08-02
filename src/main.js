@@ -1,10 +1,9 @@
 import Vue from 'vue'
-import App from './App.vue'
+import VueApp from './App.vue'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import Routes from './routes'
 import firebase from 'firebase'
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyAD94EufDjA35XQhhJmlhkBmEtVBl3S_KY",
@@ -40,12 +39,12 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-let app = '';
+let vapp = '';
 firebase.auth().onAuthStateChanged(() => {
-  if (!app) {
-    app = new Vue({
+  if (!vapp) {
+    vapp = new Vue({
     el: '#app',
-    render: h => h(App),
+    render: h => h(VueApp),
     router:router
   })
   }
